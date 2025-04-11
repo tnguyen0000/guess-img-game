@@ -1,0 +1,1 @@
+# No model needed as nothing is being stored
