@@ -1,18 +1,9 @@
-import './App.css'
-import { test } from './api/imageFetch'
+import GamePage from './components/GamePage';
+import './styles/App.css';
 
 function App() {
   return (
-    <>
-      <button
-        onClick={() => {
-          console.log('hey')
-          test();
-        }}
-      >
-        hey
-      </button>
-    </>
+    <GamePage/>
   )
 }
 
