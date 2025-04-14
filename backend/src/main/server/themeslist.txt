@@ -1,0 +1,10 @@
+office
+fruit
+technology
+human
+animal
+dog
+cat
+apple
+rain
+ocean
