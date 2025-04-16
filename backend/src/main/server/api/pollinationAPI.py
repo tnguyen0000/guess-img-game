@@ -27,7 +27,7 @@ def getAIImage(theme: str) -> object:
             apiResponse = response
             apiResponse = apiResponse.read()
             imageBase64 = base64.b64encode(apiResponse)
-            res = {'test': imageBase64}
+            res = {'url': imageBase64}
             return res
     except (HTTPError) as err:
         print('HTTP Error', err.read().decode())
