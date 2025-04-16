@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from ..utils import getTheme
 from ..api.unsplashAPI import getRealImage
+from ..api.pollinationAPI import getAIImage
 
 REAL_IMAGE_NUM = 3
 
@@ -14,6 +15,11 @@ class GetImageView(APIView):
         theme = getTheme()
         realImages = getRealImage(theme, REAL_IMAGE_NUM)
         if realImages == None:
-            return Response(data={'TODO': '123'})
-        # TODO!: add AI generation, process/sanitise data to send back
-        return Response(data=realImages)
+            return Response(data={'error': 'Trouble retrieving real images!'})
+
+        aiImage = getAIImage(theme)
+        if aiImage == None:
+            return Response(data={'error': 'Trouble retrieving AI images'}) 
+
+
+        return Response(data=aiImage)

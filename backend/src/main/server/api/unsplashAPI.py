@@ -1,4 +1,3 @@
-import urllib.parse
 import urllib.request
 from urllib.error import HTTPError
 from dotenv import load_dotenv
