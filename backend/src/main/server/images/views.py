@@ -19,15 +19,19 @@ class GetImageView(APIView):
 
         aiImage = getAIImage(theme)
         if aiImage == None:
-            return Response(data={'error': 'Trouble retrieving AI images'}) 
+            return Response(data={'error': 'Trouble retrieving AI image!'}) 
 
-        response = list(map(lambda x: {
+        images = list(map(lambda x: {
             'url': x['urls']['regular'],
             'isCorrect': False
         }, realImages))
 
         aiImage['isCorrect'] = True
-        response.append(aiImage)
+        images.append(aiImage)
 
+        response = {
+            'theme': theme,
+            'images': images
+        }
 
         return Response(data=response)

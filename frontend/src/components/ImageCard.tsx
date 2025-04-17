@@ -1,18 +1,20 @@
 import '../styles/images.css'
 import { ImageCardProp } from '../types';
 function ImageCard(props: ImageCardProp) {
-    const {imageUrl, isCorrect, score, setScore, page, setPage} = props;
+    const {imageUrl, isCorrect, selectedValue, setSelectedValue} = props;
+    // AI images are Base64 encoded whilst real images should be urls
   return (
     <div className='image-card'
         onClick={(e) => {
             e.preventDefault();
-            if (isCorrect) {
-                setScore(score + 1);
+            if (selectedValue === null) {
+                setSelectedValue(isCorrect);
             }
-            setPage(page + 1);
         }}
     >
-        <img src={imageUrl} alt="" />
+        <img className='image-card-img'
+            src={isCorrect ? `data:image/jpeg;base64,${imageUrl}` : imageUrl}
+        />
     </div>
   )
 }

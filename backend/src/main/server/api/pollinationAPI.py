@@ -8,8 +8,9 @@ POLLINATION_URL = 'https://image.pollinations.ai/'
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0' # polliinations prevents urllib user-agent
 
 '''
-
-    returns: https://unsplash.com/documentation#get-a-random-photo
+    args:
+        theme - String of the image theme
+    returns: Image file (typically JPEG)
 '''
 def getAIImage(theme: str) -> object:
     seed = random.randint(1, 10)

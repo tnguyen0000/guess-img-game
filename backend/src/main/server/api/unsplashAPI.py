@@ -9,6 +9,12 @@ load_dotenv()
 UNSPLASH_URL = 'https://api.unsplash.com/'
 UNSPLASH_ACCESS_KEY = os.getenv('UNSPLASH_ACCESS_KEY')
 
+'''
+    args:
+        theme - String of the image theme
+        numImages - Positive integer of how many random images to retrieve
+    returns: https://unsplash.com/documentation#get-a-random-photo
+'''
 def getRealImage(theme: str, numImages: int) -> object:
     API_ENDPOINT = '/photos/random'
     query = f'query={theme}'

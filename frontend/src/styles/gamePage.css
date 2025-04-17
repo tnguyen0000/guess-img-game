@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%
 }
 
 #game-top-bar {
@@ -29,6 +30,15 @@
 
 .game-information-child {
   margin: 0;
+}
+
+#game-content-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  height: 75%;
 }
 /*
   TODO!: add @media for smaller screen sizes
