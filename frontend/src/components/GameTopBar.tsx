@@ -12,7 +12,7 @@ function GameTopBar(props: GameTopBarProp) {
         <h3 className='game-information-child'>Page: {page}</h3>
       </div>
     </div>
-  ) // TODO!: change Page tracker
+  )
 }
 
 export default GameTopBar;

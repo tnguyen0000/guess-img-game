@@ -1,4 +1,5 @@
 # AI Generation from on https://pollinations.ai/
+import urllib.parse
 import urllib.request
 from urllib.error import HTTPError
 import random
@@ -15,7 +16,7 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 F
 def getAIImage(theme: str) -> object:
     seed = random.randint(1, 10)
     API_ENDPOINT = 'prompt/'
-    prompt = f'query={theme}'
+    prompt = urllib.parse.quote(f'real life {theme}')
     seed = f'seed={seed}'
     logo = f'nologo=true'
     finalUrl = POLLINATION_URL + API_ENDPOINT + prompt + '?' + seed + '&' + logo

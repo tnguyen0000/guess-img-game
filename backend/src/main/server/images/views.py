@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from ..utils import getTheme
 from ..api.unsplashAPI import getRealImage
 from ..api.pollinationAPI import getAIImage
+import random
 
 REAL_IMAGE_NUM = 3
 
@@ -13,6 +14,7 @@ class TestView(APIView):
 class GetImageView(APIView):
     def get(self, request):
         theme = getTheme()
+
         realImages = getRealImage(theme, REAL_IMAGE_NUM)
         if realImages == None:
             return Response(data={'error': 'Trouble retrieving real images!'})
@@ -28,7 +30,8 @@ class GetImageView(APIView):
 
         aiImage['isCorrect'] = True
         images.append(aiImage)
-
+        random.shuffle(images)
+        
         response = {
             'theme': theme,
             'images': images

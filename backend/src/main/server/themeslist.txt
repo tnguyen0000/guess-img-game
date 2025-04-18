@@ -8,3 +8,7 @@ Cat
 Apple
 Rain
 Ocean
+Car
+Skyscraper
+Lightning
+Snow

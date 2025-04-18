@@ -12,9 +12,6 @@ function GamePage() {
   const [images, setImages] = useState<Images | ImageError>([]);
   const [selectedValue, setSelectedValue] = useState<boolean | null>(null);
 
-  useEffect(() => {
-    console.log(page)
-  }, [page]);
 
   useEffect(() => {
     if (!isImageError(images) && images.length === 0) {
@@ -23,11 +20,18 @@ function GamePage() {
         setImages(res.images);
         setTheme(res.theme);
       }).catch((err) => {
-        setImages(err)
-        console.log(err)
+        setImages(err);
       })
     }
   }, [images]);
+
+  useEffect(() => {
+    if (selectedValue) { // If selected image is AI image
+      setScore(score + 1);
+    } else if (selectedValue === false) { // Selected image is real image and variable is not null
+
+    }
+  }, [selectedValue]);
 
   return (
     <div id='game-page'>
@@ -59,6 +63,18 @@ function GamePage() {
             }
           })()
         }
+        <button id='next-page-btn'
+          style={{display: selectedValue !== null ? 'block' : 'none'}}
+          onClick={(e) => {
+            e.preventDefault();
+            setTheme('');
+            setImages([]);
+            setSelectedValue(null);
+            setPage(page + 1);
+          }}
+        >
+          Next Page
+        </button>
       </div>
     </div>
   )

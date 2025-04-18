@@ -33,12 +33,27 @@
 }
 
 #game-content-container {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
   height: 75%;
+}
+
+#next-page-btn {
+  display: none;
+  position: absolute;
+  text-align: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  height: 5%;
+  margin-inline: auto;
+  margin-block: auto;
 }
 /*
   TODO!: add @media for smaller screen sizes

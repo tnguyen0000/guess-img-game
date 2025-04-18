@@ -7,13 +7,19 @@
   border: 1px solid gray;
 }
 
-.image-card img {
+.image-content-enabled {
   display: flex;
   width: 40%;
   aspect-ratio: 1 / 1;
 }
 
-.image-card img:hover {
+.image-content-disabled {
+  display: flex;
+  width: 40%;
+  aspect-ratio: 1 / 1;
+}
+
+.image-content-enabled:hover {
   border: 1px solid green;
   transform: scale(1.1);
 }
