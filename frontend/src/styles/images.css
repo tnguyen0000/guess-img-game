@@ -23,3 +23,17 @@
   border: 1px solid green;
   transform: scale(1.1);
 }
+
+@media screen and ((max-width: 800px) and (max-height: 1400px)) {
+  .image-card {
+    width: 45%;
+  }
+
+  .image-content-enabled {
+    width: 50%;
+  }
+  
+  .image-content-disabled {
+    width: 50%;
+  }
+}

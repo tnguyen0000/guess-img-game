@@ -55,6 +55,24 @@
   margin-inline: auto;
   margin-block: auto;
 }
-/*
-  TODO!: add @media for smaller screen sizes
-*/
+
+@media screen and ((max-width: 800px) and (max-height: 1400px)) {
+  #game-top-bar {
+    font-size: 70%;
+  }
+
+  #game-information-container {
+    width: 12%;
+  }
+
+  #game-content-container {
+    border: 1px black solid;
+  }
+
+  #next-page-btn {
+    width: 15%;
+    height: 15%;
+    margin-inline: auto;
+    margin-block: auto;
+  }
+}
